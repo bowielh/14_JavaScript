@@ -1,7 +1,7 @@
-* {
+/* * {
   box-sizing: border-box;
   font-family: Ubuntu, sans-serif;
-}
+} */
 
 html,
 body {
@@ -16,6 +16,15 @@ body {
   min-height: 100%;
   padding-bottom: 130px;
   overflow: auto;
+  background-color: #2b3e50;
+}
+
+#ufo {
+  background-color: #4e5d6c;
+}
+
+.navbar-brand {
+  color: white;
 }
 
 /* The footer is positioned at the bottom of the page */
@@ -36,6 +45,15 @@ body {
   left: 0;
   padding: 5px;
   background: #1b3146;
+  color: white;
+}
+
+/* td {
+  color: white;
+} */
+
+#ufo-table {
+  background-color:white;
 }
 
 .navbar {
@@ -74,7 +92,7 @@ select {
 }
 
 #table-area th {
-  text-align: center;
+  text-align: left;
 }
 
 #table-area th:first-child,
@@ -102,6 +120,7 @@ select {
   background-attachment: fixed;
   background-position: bottom center;
   background-size: cover;
+  color: white
 }
 
 .hero h1 {
@@ -190,6 +209,8 @@ select {
     animation: smaller-title 1.2s forwards linear;
   }
 }
+
+
 
 /* keyframe animations which will be used to animate the title */
 @keyframes title {
