@@ -65,7 +65,6 @@ filterButton.on("click", function(){
     var inputElement = d3.select("#datetime").property("value");
     var dataElement = "datetime"
     filter(inputElement, dataElement);
-    console.log(inputElement)
 });
 
 dateButton.on("click", function(){
@@ -73,8 +72,18 @@ dateButton.on("click", function(){
     var aDate = d3.select("#dateMenu");
     d3.selectAll(".dropdown-item").remove();
 
-    for (i = 0; i < uniqueData.length; i++) {
-        aDate.append("a").attr("class","dropdown-item").attr("href","#").text(uniqueData[i]);
+    var dataArray = []
+    for (i = 0; i < uniqueData.length; i++){
+        dataArray.push(uniqueData[i]);
+    };
+
+    dataArray.sort(function compareFunction(firstNum, secondNum) {
+      // resulting order is (-120, 2, 3)
+      return new Date(firstNum) - new Date(secondNum);
+    });
+
+    for (j = 0; j < dataArray.length; j++) {
+        aDate.append("a").attr("class","dropdown-item").attr("href","#").text(dataArray[j]);
     };
 
     d3.selectAll(".dropdown-item").on("click", function(){
@@ -90,8 +99,15 @@ cityButton.on("click", function(){
     var aCity = d3.select("#cityMenu");
     d3.selectAll(".dropdown-item").remove();
 
-    for (i = 0; i < uniqueData.length; i++) {
-        aCity.append("a").attr("class","dropdown-item").attr("href","#").text(uniqueData[i]);
+    var dataArray = []
+    for (i = 0; i < uniqueData.length; i++){
+        dataArray.push(uniqueData[i]);
+    };
+
+    dataArray.sort();
+
+    for (j = 0; j < dataArray.length; j++) {
+        aCity.append("a").attr("class","dropdown-item").attr("href","#").text(dataArray[j]);
     };
 
     d3.selectAll(".dropdown-item").on("click", function(){
@@ -107,8 +123,15 @@ stateButton.on("click", function(){
     var aState = d3.select("#stateMenu");
     d3.selectAll(".dropdown-item").remove();
 
-    for (i = 0; i < uniqueData.length; i++) {
-        aState.append("a").attr("class","dropdown-item").attr("href","#").text(uniqueData[i]);
+    var dataArray = []
+    for (i = 0; i < uniqueData.length; i++){
+        dataArray.push(uniqueData[i]);
+    };
+
+    dataArray.sort();
+
+    for (j = 0; j < dataArray.length; j++) {
+        aState.append("a").attr("class","dropdown-item").attr("href","#").text(dataArray[j]);
     };
 
     d3.selectAll(".dropdown-item").on("click", function(){
@@ -124,8 +147,15 @@ countryButton.on("click", function(){
     var aCountry = d3.select("#countryMenu");
     d3.selectAll(".dropdown-item").remove();
 
-    for (i = 0; i < uniqueData.length; i++) {
-        aCountry.append("a").attr("class","dropdown-item").attr("href","#").text(uniqueData[i]);
+    var dataArray = []
+    for (i = 0; i < uniqueData.length; i++){
+        dataArray.push(uniqueData[i]);
+    };
+
+    dataArray.sort();
+
+    for (j = 0; j < dataArray.length; j++) {
+        aCountry.append("a").attr("class","dropdown-item").attr("href","#").text(dataArray[j]);
     };
 
     d3.selectAll(".dropdown-item").on("click", function(){
